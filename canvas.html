@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Canvas Example</title>
+  </head>
+  <body>
+
+    <!-- defining my canvas tag with an id, width, height and border -->
+<canvas id="myCanvas" width="175" height="100" style="border:3px solid blue;">
+    <script>
+      // To draw using a canvas tag you need to use JavaScript
+
+      // Here I am querying the dom for the canvas tag by the id "myCanvas" an assigning it to a variable
+      var c = document.getElementById("myCanvas");
+
+      // Next I call getContext method to create a 2d drawing and assigning it to another variable
+      var ctx = c.getContext("2d");
+
+      // Then I use a method that creates a gradient within the context of the canvas element
+      var grd = ctx.createLinearGradient(35, 55, 125, 0);
+
+      // Here I add in two colors for the gradient I added in the previous step from blue to green
+      grd.addColorStop(0, "blue");
+      grd.addColorStop(1, "green");
+
+      ctx.fillStyle = grd;
+      // Finally I fill in the 2d drawing with a rectangle drawing that takes x and y coordinates as well as height and width
+      ctx.fillRect(10, 10, 150, 80);  
+
+    </script>
+  </body>
+</html>
